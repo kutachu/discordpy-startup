@@ -12,7 +12,7 @@ async def on_message(message):
 
     voice = await client.join_voice_channel(message.author.voice_channel)
     if message.content == "＠ジャンプ":
-        player = voice.create_ffmpeg_player('./jump.mp3')
+        player = voice.create_ffmpeg_player('jump.mp3')
         player.start()
 
     if message.content.startswith('$hello'):
