@@ -14,4 +14,7 @@ async def on_message(message):
         player = voice.create_ffmpeg_player('jump.mp3')
         player.start()
 
+    if message.content.startswith('$hello'):
+        await message.channel.send('Hello!')
+
 client.run(token)
