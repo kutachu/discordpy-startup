@@ -8,14 +8,10 @@ token = os.environ['DISCORD_BOT_TOKEN']
 async def on_message(message):
     if message.author.bot:
         return
-
-    voice = await client.join_voice_channel(message.author.voice_channel)
-    if message.content.startswith('$jump'):
-        await message.channel.send(message.author.voice_channel)
-        player = voice.create_ffmpeg_player('jump.mp3')
-        player.start()
-
-    if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
+    
+    if message.content == "＠ジャンプ" or message.content == "@ジャンプ"
+        voice = await message.author.voice.channel.connect()
+        voice.play(discord.FFmpegPCMAudio('jump.mp3'), after=lambda e: print('done', e))
+        return
 
 client.run(token)
