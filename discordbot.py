@@ -10,10 +10,10 @@ async def on_message(message):
     if message.author.bot:
         return
 
-    voice = await client.join_voice_channel(client.get_channel(int(voice_id))
-    if message.content == ("＠ジャンプ"):
-        player = voice.create_ffmpeg_player('jump.mp3')
-        player.start()
+    #voice = await client.join_voice_channel(client.get_channel(int(voice_id))
+    #if message.content == ("＠ジャンプ"):
+    #    player = voice.create_ffmpeg_player('jump.mp3')
+    #    player.start()
 
     if message.content.startswith('$hello'):
         await message.channel.send('Hello!')
